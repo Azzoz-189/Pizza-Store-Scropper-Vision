@@ -64,12 +64,19 @@ services:
     build:
       context: .
       dockerfile: detection/Dockerfile
+    container_name: eaglevisiontask-detection-1
     ports:
       - "8001:8001"
     environment:
       - KAFKA_BOOTSTRAP_SERVERS=kafka:9092
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./detection:/app
+      - ./models:/app/models
     depends_on:
-      - kafka
+      kafka:
+        condition: service_healthy
+    restart: unless-stopped
 
   tracking:
     build: ./tracking
