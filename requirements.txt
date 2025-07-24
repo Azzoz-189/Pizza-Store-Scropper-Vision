@@ -1,0 +1,10 @@
+# Top-level dependencies for the project
+# Each microservice may have its own requirements file
+opencv-python
+numpy
+fastapi
+uvicorn
+pydantic
+requests
+yolov5  # example, replace with your chosen model
+kafka-python  # or 'pika' for RabbitMQ

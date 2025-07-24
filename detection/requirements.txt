@@ -1,0 +1,10 @@
+torchvision
+yolov5>=7.0
+opencv-python
+numpy
+pydantic
+fastapi
+uvicorn[standard]
+kafka-python
+pillow
+ultralytics

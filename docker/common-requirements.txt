@@ -1,0 +1,25 @@
+# Common dependencies shared across CV microservices (lightweight version)
+# Core web framework
+fastapi
+uvicorn[standard]
+pydantic
+
+# Basic CV & utilities (lightweight)
+opencv-python-headless
+numpy
+pillow
+
+# Message broker
+kafka-python
+
+# Streaming & WebSocket
+websockets
+
+# Basic utilities
+requests
+tqdm
+
+# Note: Heavy packages installed per service:
+# - PyTorch (CPU-only): ~100MB vs 3.74GB CUDA
+# - YOLO packages: installed only where needed
+# - ML packages (matplotlib, pandas, seaborn): per service
